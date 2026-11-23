@@ -1,0 +1,113 @@
+```xml
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 900 320"
+     width="900" height="320">
+
+  <defs>
+    <radialGradient id="bg">
+      <stop offset="0%" stop-color="#14264b"/>
+      <stop offset="100%" stop-color="#050816"/>
+    </radialGradient>
+
+    <linearGradient id="glow">
+      <stop offset="0%" stop-color="#00f7ff"/>
+      <stop offset="50%" stop-color="#7b61ff"/>
+      <stop offset="100%" stop-color="#00f7ff"/>
+    </linearGradient>
+
+    <filter id="neon">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="320" rx="18" fill="url(#bg)"/>
+
+  <!-- Brain outline -->
+  <path d="M450 65
+    C420 25 365 55 370 95
+    C320 95 310 155 345 180
+    C310 220 355 265 395 245
+    C410 285 445 270 450 255
+    C455 270 490 285 505 245
+    C545 265 590 220 555 180
+    C590 155 580 95 530 95
+    C535 55 480 25 450 65 Z"
+    fill="none" stroke="url(#glow)"
+    stroke-width="2.5" filter="url(#neon)"
+    opacity="0.9"/>
+
+  <!-- Neural connections -->
+  <g stroke="#00dfff" stroke-width="1.5" opacity="0.65"
+     fill="none" filter="url(#neon)">
+
+    <path d="M450 75 L405 110 L380 155 L415 195 L450 235"/>
+    <path d="M450 75 L495 110 L520 155 L485 195 L450 235"/>
+    <path d="M405 110 L450 135 L495 110"/>
+    <path d="M380 155 L450 165 L520 155"/>
+    <path d="M415 195 L450 165 L485 195"/>
+    <path d="M405 110 L415 195"/>
+    <path d="M495 110 L485 195"/>
+    <path d="M450 75 L450 135 L450 165 L450 235"/>
+    <path d="M345 145 L380 155"/>
+    <path d="M555 145 L520 155"/>
+  </g>
+
+  <!-- Animated data pulses -->
+  <g fill="#00f7ff" filter="url(#neon)">
+    <circle r="4">
+      <animateMotion dur="2s" repeatCount="indefinite"
+        path="M450 75 L405 110 L380 155 L415 195 L450 235"/>
+    </circle>
+    <circle r="4">
+      <animateMotion dur="2.5s" repeatCount="indefinite"
+        path="M450 75 L495 110 L520 155 L485 195 L450 235"/>
+    </circle>
+    <circle r="3">
+      <animateMotion dur="3s" repeatCount="indefinite"
+        path="M405 110 L450 135 L495 110"/>
+    </circle>
+    <circle r="3">
+      <animateMotion dur="2.8s" repeatCount="indefinite"
+        path="M380 155 L450 165 L520 155"/>
+    </circle>
+  </g>
+
+  <!-- Neural nodes -->
+  <g fill="#00f7ff" filter="url(#neon)">
+    <circle cx="450" cy="75" r="6"/>
+    <circle cx="405" cy="110" r="5"/>
+    <circle cx="495" cy="110" r="5"/>
+    <circle cx="380" cy="155" r="5"/>
+    <circle cx="520" cy="155" r="5"/>
+    <circle cx="450" cy="135" r="5"/>
+    <circle cx="450" cy="165" r="6"/>
+    <circle cx="415" cy="195" r="5"/>
+    <circle cx="485" cy="195" r="5"/>
+    <circle cx="450" cy="235" r="6"/>
+  </g>
+
+  <!-- Pulsing brain nodes -->
+  <circle cx="450" cy="165" r="9"
+          fill="none" stroke="#b18cff" stroke-width="2">
+    <animate attributeName="r" values="7;17;7"
+             dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.1;1"
+             dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Title -->
+  <text x="450" y="295"
+        fill="#00f7ff"
+        font-family="monospace"
+        font-size="16"
+        text-anchor="middle"
+        letter-spacing="4">
+    ARTIFICIAL NEURAL NETWORKS
+  </text>
+
+</svg>
+```
